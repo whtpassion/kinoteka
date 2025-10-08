@@ -1,4 +1,4 @@
-<h1 align="center">🎦 kinoteka 🎦 </h1>
+<h1 align="center">🎦 KINOteka 🎦 </h1>
 <h3 align="center">🎞️Сервис для подбора и поиска фильмов🎞️</h3>
 
 <h3 align="center">😎 Участники проекта: Бартенев Дмитрий и Рудь Арcений 😎</h3>
