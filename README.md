@@ -25,4 +25,4 @@
 
 Проект ориентирован на создание сообщества любителей кино, где каждый сможет не только открывать для себя новые фильмы, но и формировать собственный киноархив, отражающий его вкусы и интересы.</body>
 
-<img width="736" height="560" alt="image" src="https://github.com/user-attachments/assets/7e5e9ebc-2675-47d9-8693-df2bf082043d" />
+<img width="736" height="560" alt="image of Scorcese" src="https://github.com/user-attachments/assets/7e5e9ebc-2675-47d9-8693-df2bf082043d" />
