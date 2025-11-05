@@ -1,1 +1,1 @@
-![Mental_map](Documentation/screenshots/Mentalmap_K.jpg?raw=True)
+![Mental_map](screenshots/Mentalmap_K.jpg?raw=True)
