@@ -28,10 +28,15 @@
 <h3>📌Ссылки на файлы проекта</h3>
 
 [Полное описание проекта](Doсumentation/Project_Description.md)
+
 [Ментальная карта проекта](Documentation/Mentalmap.md)
 [Диаграмма IDEF0](Documentation/IDEF0_diagram.md)
+
 [Диаграмма DFD](Documentation/DFD.md)
+
 [Диаграмма BPMN](Documentation/BPMN.md)
+
 [Диаграмма UML](Documentation/UML.md)
+
 
 <img width="736" height="560" alt="image of Scorcese" src="https://github.com/user-attachments/assets/7e5e9ebc-2675-47d9-8693-df2bf082043d" />
