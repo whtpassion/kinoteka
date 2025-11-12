@@ -37,7 +37,7 @@
 
 [Диаграмма BPMN](/Documentation/BPMN.md)
 
-[Диаграмма UML](/Documentation/UML.md)
+[Диаграмма UML классов](/Documentation/UML_class.md)
 
 
 <img width="736" height="560" alt="image of Scorcese" src="https://github.com/user-attachments/assets/7e5e9ebc-2675-47d9-8693-df2bf082043d" />
