@@ -1,0 +1,286 @@
+--
+-- PostgreSQL database dump
+--
+
+\restrict atoWEfMk9AcRctEHdGFZu6HH7IP2IFbEitTYfIZL0q8aZUKWlobszpO0y7SxtYv
+
+-- Dumped from database version 18.1
+-- Dumped by pg_dump version 18.0
+
+-- Started on 2025-12-10 10:28:13
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET transaction_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET xmloption = content;
+SET client_min_messages = warning;
+SET row_security = off;
+
+SET default_tablespace = '';
+
+SET default_table_access_method = heap;
+
+--
+-- TOC entry 219 (class 1259 OID 16389)
+-- Name: Films; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public."Films" (
+    "Name" text NOT NULL,
+    "Date" date NOT NULL,
+    "Length" integer NOT NULL,
+    "Country" text NOT NULL,
+    "Description" text NOT NULL,
+    "Score" numeric,
+    "ID_film" integer NOT NULL
+);
+
+
+ALTER TABLE public."Films" OWNER TO postgres;
+
+--
+-- TOC entry 220 (class 1259 OID 16408)
+-- Name: Scores; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public."Scores" (
+    "ID_score" integer NOT NULL,
+    "Score_text" text,
+    "Score" integer,
+    "Score_date" date,
+    "Film" text,
+    "Author" text
+);
+
+
+ALTER TABLE public."Scores" OWNER TO postgres;
+
+--
+-- TOC entry 222 (class 1259 OID 16455)
+-- Name: Selections; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public."Selections" (
+    "ID_selection" integer NOT NULL,
+    "Selection_name" text,
+    "Author" text,
+    "Films" text
+);
+
+
+ALTER TABLE public."Selections" OWNER TO postgres;
+
+--
+-- TOC entry 221 (class 1259 OID 16440)
+-- Name: Users; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public."Users" (
+    "ID_user" integer NOT NULL,
+    "Username" text,
+    "Password" text,
+    "Link" text
+);
+
+
+ALTER TABLE public."Users" OWNER TO postgres;
+
+--
+-- TOC entry 223 (class 1259 OID 16482)
+-- Name: films_with_rating; Type: VIEW; Schema: public; Owner: postgres
+--
+
+CREATE VIEW public.films_with_rating AS
+SELECT
+    NULL::integer AS "ID_film",
+    NULL::text AS "Name",
+    NULL::numeric AS avg_rating;
+
+
+ALTER VIEW public.films_with_rating OWNER TO postgres;
+
+--
+-- TOC entry 4933 (class 0 OID 16389)
+-- Dependencies: 219
+-- Data for Name: Films; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public."Films" ("Name", "Date", "Length", "Country", "Description", "Score", "ID_film") FROM stdin;
+Inception	2010-06-08	148	USA	Кобб – талантливый вор, лучший из лучших в опасном искусстве извлечения: он крадет ценные секреты из глубин подсознания во время сна, когда человеческий разум наиболее уязвим. Редкие способности Кобба сделали его ценным игроком в привычном к предательству мире промышленного шпионажа, но они же превратили его в извечного беглеца и лишили всего, что он когда-либо любил.\n\nИ вот у Кобба появляется шанс исправить ошибки. Его последнее дело может вернуть все назад, но для этого ему нужно совершить невозможное – инициацию. Вместо идеальной кражи Кобб и его команда спецов должны будут провернуть обратное. Теперь их задача – не украсть идею, а внедрить ее. Если у них получится, это и станет идеальным преступлением.\n\nНо никакое планирование или мастерство не могут подготовить команду к встрече с опасным противником, который, кажется, предугадывает каждый их ход. Врагом, увидеть которого мог бы лишь Кобб.	\N	10
+Sen to Chihiro no kamikakushi	2001-07-20	124	Japan	Тихиро с мамой и папой переезжает в новый дом. Заблудившись по дороге, они оказываются в странном пустынном городе, где их ждет великолепный пир. Родители с жадностью набрасываются на еду и к ужасу девочки превращаются в свиней, став пленниками злой колдуньи Юбабы. Теперь, оказавшись одна среди волшебных существ и загадочных видений, Тихиро должна придумать, как избавить своих родителей от чар коварной старухи.	\N	9
+Fight Club	1999-06-23	139	USA	Сотрудник страховой компании страдает хронической бессонницей и отчаянно пытается вырваться из мучительно скучной жизни. Однажды в очередной командировке он встречает некоего Тайлера Дёрдена — харизматического торговца мылом с извращенной философией. Тайлер уверен, что самосовершенствование — удел слабых, а единственное, ради чего стоит жить, — саморазрушение.\n\nПроходит немного времени, и вот уже новые друзья лупят друг друга почем зря на стоянке перед баром, и очищающий мордобой доставляет им высшее блаженство. Приобщая других мужчин к простым радостям физической жестокости, они основывают тайный Бойцовский клуб, который начинает пользоваться невероятной популярностью.	\N	8
+Forrest Gump	1994-09-10	142	USA	Сидя на автобусной остановке, Форрест Гамп — не очень умный, но добрый и открытый парень — рассказывает случайным встречным историю своей необыкновенной жизни.\n\nС самого малолетства парень страдал от заболевания ног, соседские мальчишки дразнили его, но в один прекрасный день Форрест открыл в себе невероятные способности к бегу. Подруга детства Дженни всегда его поддерживала и защищала, но вскоре дороги их разошлись.	\N	7
+Shutter Island	2009-02-13	138	USA	Два американских судебных пристава отправляются на один из островов в штате Массачусетс, чтобы расследовать исчезновение пациентки клиники для умалишенных преступников. При проведении расследования им придется столкнуться с паутиной лжи, обрушившимся ураганом и смертельным бунтом обитателей клиники.	\N	6
+The Green Mile	1999-12-06	189	USA	Пол Эджкомб — начальник блока смертников в тюрьме «Холодная гора», каждый из узников которого однажды проходит «зеленую милю» по пути к месту казни. Пол повидал много заключённых и надзирателей за время работы. Однако гигант Джон Коффи, обвинённый в страшном преступлении, стал одним из самых необычных обитателей блока.	\N	5
+The Gentlemen	2019-12-03	113	UK	Один ушлый американец ещё со студенческих лет приторговывал наркотиками, а теперь придумал схему нелегального обогащения с использованием поместий обедневшей английской аристократии и очень неплохо на этом разбогател. Другой пронырливый журналист приходит к Рэю, правой руке американца, и предлагает тому купить киносценарий, в котором подробно описаны преступления его босса при участии других представителей лондонского криминального мира — партнёра-еврея, китайской диаспоры, чернокожих спортсменов и даже русского олигарха.	\N	4
+The Shawshank Redemption	1994-09-10	142	USA	Бухгалтер Энди Дюфрейн обвинён в убийстве собственной жены и её любовника. Оказавшись в тюрьме под названием Шоушенк, он сталкивается с жестокостью и беззаконием, царящими по обе стороны решётки. Каждый, кто попадает в эти стены, становится их рабом до конца жизни. Но Энди, обладающий живым умом и доброй душой, находит подход как к заключённым, так и к охранникам, добиваясь их особого к себе расположения.	\N	3
+Interstellar	2014-10-26	169	USA	Когда засуха, пыльные бури и вымирание растений приводят человечество к продовольственному кризису, коллектив исследователей и учёных отправляется сквозь червоточину (которая предположительно соединяет области пространства-времени через большое расстояние) в путешествие, чтобы превзойти прежние ограничения для космических путешествий человека и найти планету с подходящими для человечества условиями.	\N	2
+Intouchables	2011-09-23	112	France	Пострадав в результате несчастного случая, богатый аристократ Филипп нанимает в помощники человека, который менее всего подходит для этой работы, – молодого жителя предместья Дрисса, только что освободившегося из тюрьмы. Несмотря на то, что Филипп прикован к инвалидному креслу, Дриссу удается привнести в размеренную жизнь аристократа дух приключений.	\N	1
+\.
+
+
+--
+-- TOC entry 4934 (class 0 OID 16408)
+-- Dependencies: 220
+-- Data for Name: Scores; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public."Scores" ("ID_score", "Score_text", "Score", "Score_date", "Film", "Author") FROM stdin;
+1	Круто!	9	2025-09-12	Inception	Trez
+2	Фильм о настоящей дружбе	8	2025-09-12	Intouchables	Trez
+3	Просто космос!	10	2025-09-12	Interstellar	Trez
+4	Аниме	9	2025-09-12	Sen to Chihiro no kamikakushi	Trez
+5	Кто такой Тайлер Дёрден	10	2025-09-12	Fight Club	Trez
+6	Беги Лес, Беги!!!	7	2025-09-12	Forrest Gump	Trez
+7	Фильм головоломка!	10	2025-09-12	Shutter Island	Trez
+8	Грустный фильм.	10	2025-09-12	The Green Mile	Trez
+9	Боевичок	6	2025-09-12	The Gentlemen	Trez
+10	Побег из тюрьмы 3д	9	2025-09-12	The Shawshank Redemption	Trez
+11	Стильный, динамичный и очень английский. Получил удовольствие от каждого диалога.	8	2025-09-12	The Gentlemen	ubicA
+12	Мощный, эмоциональный фильм. Сцена на планете с волнами — просто невероятная.	9	2025-09-12	Interstellar	ubicA
+13	Сильная атмосфера и классный финал, но в середине слегка проседает.	7	2025-09-12	Fight Club	ubicA
+14	Запутанно, но круто. Особенно понравились сцены со сном внутри сна.	8	2025-09-12	Inception	ubicA
+15	Добрый, искренний фильм. Каждый раз смотрю как впервые.	10	2025-09-12	Forrest Gump	Vladimir
+16	Напряжённый триллер с отличной развязкой. Атмосфера на высоте.	9	2025-09-12	Shutter Island	Vladimir
+17	Очень красивый и необычный анимационный фильм. Запоминается надолго.	8	2025-09-12	Sen to Chihiro no kamikakushi	Vladimir
+18	Редкий фильм, который делает лучше. Улыбался почти весь просмотр.	10	2025-09-12	Intouchables	Vladimir
+19	Идеальное кино. Каждая сцена работает, финал — абсолютное наслаждение.	10	2025-09-12	The Shawshank Redemption	passion
+20	Идеальное кино. Каждая сцена работает, финал — абсолютное наслаждение.	9	2025-09-12	The Green Mile	passion
+21	Крутая задумка, но иногда слишком перегружено. Всё равно понравилось.	7	2025-09-12	Inception	passion
+22	Космос, музыка и драма — великолепное сочетание. Оставляет сильное послевкусие.	9	2025-09-12	Interstellar	passion
+\.
+
+
+--
+-- TOC entry 4936 (class 0 OID 16455)
+-- Dependencies: 222
+-- Data for Name: Selections; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public."Selections" ("ID_selection", "Selection_name", "Author", "Films") FROM stdin;
+\.
+
+
+--
+-- TOC entry 4935 (class 0 OID 16440)
+-- Dependencies: 221
+-- Data for Name: Users; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public."Users" ("ID_user", "Username", "Password", "Link") FROM stdin;
+1	passion	12345	\N
+2	Trez	12345	\N
+3	Vladimir	12345	\N
+4	ubicA	12345	\N
+5	FFFE	12345	\N
+\.
+
+
+--
+-- TOC entry 4771 (class 2606 OID 16470)
+-- Name: Films Films_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public."Films"
+    ADD CONSTRAINT "Films_pkey" PRIMARY KEY ("ID_film");
+
+
+--
+-- TOC entry 4775 (class 2606 OID 16415)
+-- Name: Scores Scores_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public."Scores"
+    ADD CONSTRAINT "Scores_pkey" PRIMARY KEY ("ID_score");
+
+
+--
+-- TOC entry 4781 (class 2606 OID 16462)
+-- Name: Selections Selections_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public."Selections"
+    ADD CONSTRAINT "Selections_pkey" PRIMARY KEY ("ID_selection");
+
+
+--
+-- TOC entry 4777 (class 2606 OID 16447)
+-- Name: Users Users_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public."Users"
+    ADD CONSTRAINT "Users_pkey" PRIMARY KEY ("ID_user");
+
+
+--
+-- TOC entry 4773 (class 2606 OID 16434)
+-- Name: Films film_unique; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public."Films"
+    ADD CONSTRAINT film_unique UNIQUE ("Name");
+
+
+--
+-- TOC entry 4779 (class 2606 OID 16449)
+-- Name: Users username_unique; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public."Users"
+    ADD CONSTRAINT username_unique UNIQUE ("Username");
+
+
+--
+-- TOC entry 4932 (class 2618 OID 16485)
+-- Name: films_with_rating _RETURN; Type: RULE; Schema: public; Owner: postgres
+--
+
+CREATE OR REPLACE VIEW public.films_with_rating AS
+ SELECT f."ID_film",
+    f."Name",
+    avg(s."Score") AS avg_rating
+   FROM (public."Films" f
+     LEFT JOIN public."Scores" s ON ((s."Film" = f."Name")))
+  GROUP BY f."ID_film";
+
+
+--
+-- TOC entry 4784 (class 2606 OID 16463)
+-- Name: Selections author_name; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public."Selections"
+    ADD CONSTRAINT author_name FOREIGN KEY ("Author") REFERENCES public."Users"("Username");
+
+
+--
+-- TOC entry 4782 (class 2606 OID 16435)
+-- Name: Scores film_name; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public."Scores"
+    ADD CONSTRAINT film_name FOREIGN KEY ("Film") REFERENCES public."Films"("Name") NOT VALID;
+
+
+--
+-- TOC entry 4783 (class 2606 OID 16450)
+-- Name: Scores user_name; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public."Scores"
+    ADD CONSTRAINT user_name FOREIGN KEY ("Author") REFERENCES public."Users"("Username") NOT VALID;
+
+
+-- Completed on 2025-12-10 10:28:14
+
+--
+-- PostgreSQL database dump complete
+--
+
+\unrestrict atoWEfMk9AcRctEHdGFZu6HH7IP2IFbEitTYfIZL0q8aZUKWlobszpO0y7SxtYv
+
