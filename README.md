@@ -43,4 +43,6 @@
 
 [Диаграмма Прецедентов](/Documentation/prec_d.md)
 
+[Диаграмма Базы Данных](/Documentation/Database.md)
+
 <img width="736" height="560" alt="image of Scorcese" src="https://github.com/user-attachments/assets/7e5e9ebc-2675-47d9-8693-df2bf082043d" />
